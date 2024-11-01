@@ -14,4 +14,4 @@ class Weapon:
             "1.2 attack speed",
             self.attribute
         ]
-        return "\n".join(l for l in lines if l is not None)
+        return "\n".join(filter(None, lines))
