@@ -4,10 +4,10 @@ import enchanting
 
 
 class EnchantingTest(unittest.TestCase):
-    def test_show_weapon_includes_name_damage_and_speed(self):
+    def test_str_representing_weapon_includes_name_damage_and_speed(self):
         weapon = enchanting.Weapon("dagger")
         
-        text = weapon.show()
+        text = str(weapon)
 
         self.assertIn("dagger", text)
         self.assertIn("attack speed", text)
@@ -15,14 +15,12 @@ class EnchantingTest(unittest.TestCase):
 
         self.assertEqual(len(text.split("\n")), 3)
 
-    def test_weapon_has_enchantment(self):
+    def test_weapon_description_includes_spell(self):
         weapon = enchanting.Weapon("dagger")
 
         weapon.spell = enchanting.Spell("Adjective", "+5 points")
 
-        text = weapon.show()
-
-        self.assertIn("Adjective dagger", text)
+        self.assertIn("Adjective dagger", str(weapon))
 
 if __name__ == "__main__":
     unittest.main()

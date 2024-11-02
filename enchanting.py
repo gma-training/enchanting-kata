@@ -12,7 +12,7 @@ class Weapon:
             return self.name
         return self.spell.name + " " + self.name
 
-    def show(self):
+    def __str__(self):
         lines = [
             self.prefixed_name,
             "5 - 10 attack damage",
