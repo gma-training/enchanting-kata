@@ -7,14 +7,14 @@ class Weapon:
         self.spell = None
 
     @property
-    def prefixed_name(self):
+    def enchanted_name(self):
         if self.spell is None:
             return self.name
         return self.spell.name + " " + self.name
 
     def __str__(self):
         lines = [
-            self.prefixed_name,
+            self.enchanted_name,
             "5 - 10 attack damage",
             "1.2 attack speed",
             self.spell.attribute if self.spell else None

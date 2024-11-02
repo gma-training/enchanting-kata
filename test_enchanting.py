@@ -3,7 +3,7 @@ import unittest
 import enchanting
 
 
-class EnchantingTest(unittest.TestCase):
+class WeaponTest(unittest.TestCase):
     def test_str_representing_weapon_includes_name_damage_and_speed(self):
         weapon = enchanting.Weapon("dagger")
         
@@ -21,6 +21,7 @@ class EnchantingTest(unittest.TestCase):
         weapon.spell = enchanting.Spell("Adjective", "+5 points")
 
         self.assertIn("Adjective dagger", str(weapon))
+
 
 if __name__ == "__main__":
     unittest.main()
