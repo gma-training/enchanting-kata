@@ -1,6 +1,3 @@
-import dataclasses
-
-
 class Weapon:
     def __init__(self, name):
         self.name = name
@@ -20,10 +17,10 @@ class Weapon:
         return "\n".join(filter(None, lines))
 
 
-@dataclasses.dataclass
 class Spell:
-    name: str
-    attribute: str
+    def __init__(self, name, attribute):
+        self.name = name
+        self.attribute = attribute
 
 
 null_spell = Spell(name='', attribute='')
