@@ -17,11 +17,13 @@ class EnchantingTest(unittest.TestCase):
 
     def test_weapon_has_enchantment(self):
         weapon = enchanting.Weapon("dagger")
-        weapon.enchant("Spell", "+5 points")
+
+        spell = enchanting.Spell("Adjective", "+5 points")
+        weapon.enchant(spell)
 
         text = weapon.show()
 
-        self.assertIn("Spell dagger", text)
+        self.assertIn("Adjective dagger", text)
 
 if __name__ == "__main__":
     unittest.main()
