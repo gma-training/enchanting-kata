@@ -22,6 +22,13 @@ class WeaponTest(unittest.TestCase):
 
         self.assertIn("Adjective dagger", str(weapon))
 
+    def test_enchanted_name_with_null_spell(self):
+        weapon = enchanting.Weapon("Dagger")
+
+        weapon.spell = enchanting.null_spell
+
+        self.assertEqual("Dagger", weapon.enchanted_name)
+
 
 if __name__ == "__main__":
     unittest.main()
