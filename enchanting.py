@@ -6,9 +6,6 @@ class Weapon:
         self.name = name
         self.spell = None
 
-    def enchant(self, spell):
-        self.spell = spell
-
     @property
     def prefixed_name(self):
         if self.spell is None:

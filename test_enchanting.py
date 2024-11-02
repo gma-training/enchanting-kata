@@ -18,8 +18,7 @@ class EnchantingTest(unittest.TestCase):
     def test_weapon_has_enchantment(self):
         weapon = enchanting.Weapon("dagger")
 
-        spell = enchanting.Spell("Adjective", "+5 points")
-        weapon.enchant(spell)
+        weapon.spell = enchanting.Spell("Adjective", "+5 points")
 
         text = weapon.show()
 
