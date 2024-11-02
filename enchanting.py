@@ -4,25 +4,23 @@ import dataclasses
 class Weapon:
     def __init__(self, name):
         self.name = name
-        self.spell_prefix = None
-        self.spell_attribute = None
+        self.spell = None
 
     def enchant(self, spell):
-        self.spell_prefix = spell.name
-        self.spell_attribute = spell.attribute
+        self.spell = spell
 
     @property
     def prefixed_name(self):
-        if self.spell_prefix is None:
+        if self.spell is None:
             return self.name
-        return self.spell_prefix + " " + self.name
+        return self.spell.name + " " + self.name
 
     def show(self):
         lines = [
             self.prefixed_name,
             "5 - 10 attack damage",
             "1.2 attack speed",
-            self.spell_attribute
+            self.spell.attribute if self.spell else None
         ]
         return "\n".join(filter(None, lines))
 
